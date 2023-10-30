@@ -31,6 +31,7 @@ var video = document.getElementById("videoElement");
     console.log(predictions);
     if (predictions.length > 0) {
       for (let i = 0; i < predictions.length; i++) {
+        canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
         drawHand(predictions, context);
         var probability = predictions[i].handInViewConfidence;
         var prob = (probability * 100).toPrecision(5).toString();
